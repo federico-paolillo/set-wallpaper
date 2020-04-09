@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetWallpaper.COM", "SetWallpaper.COM\SetWallpaper.COM.csproj", "{9344A876-6849-487F-BF11-C5DE8A394DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetWallpaper", "SetWallpaper\SetWallpaper.csproj", "{0470D948-A035-4C33-B9FF-AA364B986B87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9344A876-6849-487F-BF11-C5DE8A394DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9344A876-6849-487F-BF11-C5DE8A394DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9344A876-6849-487F-BF11-C5DE8A394DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9344A876-6849-487F-BF11-C5DE8A394DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0470D948-A035-4C33-B9FF-AA364B986B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0470D948-A035-4C33-B9FF-AA364B986B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0470D948-A035-4C33-B9FF-AA364B986B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0470D948-A035-4C33-B9FF-AA364B986B87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B870874-89BB-424B-9544-C05AF98F17BD}
+	EndGlobalSection
+EndGlobal
