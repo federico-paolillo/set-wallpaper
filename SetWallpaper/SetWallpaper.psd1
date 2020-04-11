@@ -15,7 +15,7 @@ RootModule = 'SetWallpaper.dll'
 ModuleVersion = '0.0.2'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Core')
 
 # ID used to uniquely identify this module
 GUID = '8bb87501-8d54-4083-8fd5-3fce5ee2d1b5'
@@ -24,7 +24,7 @@ GUID = '8bb87501-8d54-4083-8fd5-3fce5ee2d1b5'
 Author = 'Federico Paolillo'
 
 # Copyright statement for this module
-Copyright = '(c) Federico Paolillo. All rights reserved.'
+Copyright = '(c) 2020 Federico Paolillo. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = ''
@@ -69,7 +69,7 @@ RequiredAssemblies = @("SetWallpaper.COM.dll")
 FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @("Set-Wallpaper")
+CmdletsToExport = @("Get-Monitors", "Get-Wallpaper")
 
 # Variables to export from this module
 VariablesToExport = '*'
@@ -95,10 +95,10 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/federico-paolillo/set-wallpaper/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/federico-paolillo/set-wallpaper'
 
         # A URL to an icon representing this module.
         # IconUri = ''
@@ -110,7 +110,7 @@ PrivateData = @{
         # Prerelease = ''
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
-        # RequireLicenseAcceptance = $false
+        RequireLicenseAcceptance = $true
 
         # External dependent modules of this module
         # ExternalModuleDependencies = @()
