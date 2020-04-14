@@ -27,7 +27,7 @@ Author = 'Federico Paolillo'
 Copyright = '(c) 2020 Federico Paolillo. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'PowerShell 7 Cmdlets to query and change wallpapers'
+Description = 'PowerShell 7 Cmdlets to change wallpapers on Windows 10 x64'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '7.0.0'
@@ -69,7 +69,7 @@ RequiredAssemblies = @("SetWallpaper.COM.dll")
 FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @("Get-Monitor", "Get-Wallpaper")
+CmdletsToExport = @("Get-Monitor", "Get-Wallpaper", "Set-Wallpaper")
 
 # Variables to export from this module
 VariablesToExport = '*'
