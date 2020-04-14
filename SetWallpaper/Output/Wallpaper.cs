@@ -3,16 +3,16 @@
     /// <summary>
     /// A Wallpaper currently set on a Monitor
     /// </summary>
-    public class MonitorWallpaper
+    public class Wallpaper
     {
         public string Monitor { get; private set; }
 
-        public string Wallpaper { get; private set; }
+        public string Path { get; private set; }
 
-        public MonitorWallpaper(string monitor, string wallpaper)
+        public Wallpaper(string monitor, string path)
         {
             Monitor = monitor;
-            Wallpaper = wallpaper;
+            Path = path;
         }
     }
 }

@@ -7,13 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetWallpaper.COM", "SetWall
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetWallpaper", "SetWallpaper\SetWallpaper.csproj", "{0470D948-A035-4C33-B9FF-AA364B986B87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetWallpaper.COM.Console", "SetWallpaper.COM.Console\SetWallpaper.COM.Console.csproj", "{F7DB212B-9B0A-4C0C-BD76-BE8C3F2DA80F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{3C5C2330-62CF-4F53-AFD5-E11CA683213D}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		LICENSE. = LICENSE.
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -31,10 +29,6 @@ Global
 		{0470D948-A035-4C33-B9FF-AA364B986B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0470D948-A035-4C33-B9FF-AA364B986B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0470D948-A035-4C33-B9FF-AA364B986B87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7DB212B-9B0A-4C0C-BD76-BE8C3F2DA80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7DB212B-9B0A-4C0C-BD76-BE8C3F2DA80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7DB212B-9B0A-4C0C-BD76-BE8C3F2DA80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7DB212B-9B0A-4C0C-BD76-BE8C3F2DA80F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

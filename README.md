@@ -1,10 +1,10 @@
 # Set-Wallpaper
 
-Cmdlets for PowerShell 7 for changing desktop wallpaper
+PowerShell 7 Cmdlets to change Windows 10 x64 wallpapers
 
 ## Cmdlets
 
-### Get-Monitors
+### Get-Monitor
 
 ### Get-Wallpaper
 
