@@ -1,7 +1,10 @@
 ﻿using SetWallpaper.Output;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Management.Automation;
+using System.Runtime.InteropServices;
 
 namespace SetWallpaper.Commands
 {
@@ -56,27 +59,63 @@ namespace SetWallpaper.Commands
 
         private void ProcessByIdAndLiteralPath()
         {
+            Process(Id, LiteralPath, isLiteralPath: true);
+
             if (PassThrough) WriteObject(Id, enumerateCollection: true);
         }
 
         private void ProcessByIdAndPath()
         {
-            var pathToWallpaper = GetPathToWallpaper(Path, isLiteral: false);
+            Process(Id, Path, isLiteralPath: false);
 
             if (PassThrough) WriteObject(Id, enumerateCollection: true);
         }
 
         private void ProcessByInputObjectAndLiteralPath()
         {
+            Process(InputObject, LiteralPath, isLiteralPath: true);
+
             if (PassThrough) WriteObject(InputObject, enumerateCollection: true);
         }
 
         private void ProcessByInputObjectAndPath()
         {
+            Process(InputObject, Path, isLiteralPath: false);
+
             if (PassThrough) WriteObject(InputObject, enumerateCollection: true);
         }
 
-        private void SetWallpapers(string[] ids, string pathToWallpaper)
+        private void Process(IEnumerable<Monitor> monitors, string wallpaperPath, bool isLiteralPath)
+        {
+            var monitorIds = monitors.Select(monitor => monitor.Id)
+                .ToList();
+
+            Process(monitorIds, wallpaperPath, isLiteralPath);
+        }
+
+        private void Process(IEnumerable<string> monitorIds, string wallpaperPath, bool isLiteralPath)
+        {
+            try
+            {
+                var pathToWallpaper = GetPathToWallpaper(wallpaperPath, isLiteralPath);
+
+                SetWallpapers(monitorIds, pathToWallpaper);
+            }
+            catch (FileNotFoundException fnfEx)
+            {
+                var errorRecord = fnfEx.ToErrorRecord();
+
+                ThrowTerminatingError(errorRecord);
+            }
+            catch (COMException comEx)
+            {
+                var errorRecord = comEx.ToErrorRecord();
+
+                ThrowTerminatingError(errorRecord);
+            }
+        }
+
+        private void SetWallpapers(IEnumerable<string> ids, string pathToWallpaper)
         {
             if (ids is null) throw new ArgumentNullException(nameof(ids));
             if (pathToWallpaper is null) throw new ArgumentNullException(nameof(pathToWallpaper));
