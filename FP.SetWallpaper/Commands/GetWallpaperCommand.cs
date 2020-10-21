@@ -1,12 +1,12 @@
-﻿using SetWallpaper.COM;
-using SetWallpaper.Output;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using System.Runtime.InteropServices;
+using FP.SetWallpaper.Output;
+using SetWallpaper.COM;
 
-namespace SetWallpaper.Commands
+namespace FP.SetWallpaper.Commands
 {
     [Cmdlet(VerbsCommon.Get, "Wallpaper", DefaultParameterSetName = BY_ID)]
     [OutputType(typeof(Wallpaper))]
@@ -15,7 +15,8 @@ namespace SetWallpaper.Commands
         private const string BY_INPUT_OBJECT = "ByInputObject";
         private const string BY_ID = "ById";
 
-        [Parameter(Position = 0, Mandatory = true, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true, ParameterSetName = BY_ID)]
+        [Parameter(Position = 0, Mandatory = true, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true,
+            ParameterSetName = BY_ID)]
         public string[] Id { get; set; }
 
         //-InputObject parameter implementation is strongly suggested
@@ -67,7 +68,7 @@ namespace SetWallpaper.Commands
 
             try
             {
-                desktopWallpaper = (IDesktopWallpaper)new DesktopWallpaper();
+                desktopWallpaper = (IDesktopWallpaper) new DesktopWallpaper();
             }
             catch (COMException comEx)
             {
@@ -81,14 +82,13 @@ namespace SetWallpaper.Commands
             var wallpapers = new List<Wallpaper>();
 
             foreach (var id in ids)
-            {
                 //Failure to run an IDesktopWallpaper method *might* be temporary, we can continue trying with any other Monitor id left
 
                 try
                 {
                     WriteVerbose($"Getting wallpaper for monitor {id}");
 
-                    desktopWallpaper.GetWallpaper(id, out string path);
+                    desktopWallpaper.GetWallpaper(id, out var path);
 
                     //This can occur if, for example, your wallpaper gets deleted and you install a new Windows 10 Insider Preview build.
 
@@ -100,19 +100,16 @@ namespace SetWallpaper.Commands
                 }
                 catch (COMException comEx)
                 {
-                    var errorRecord = comEx.ToErrorRecord(targetObject: id);
+                    var errorRecord = comEx.ToErrorRecord(id);
 
                     WriteError(errorRecord);
-
-                    continue;
                 }
-            }
 
             //Releasing IDesktopWallpaper can be done directly here outside a finally, any failure occured before getting here did not stop the Program from executing
 
             desktopWallpaper.Release();
 
-            WriteObject(wallpapers, enumerateCollection: true);
+            WriteObject(wallpapers, true);
         }
     }
 }

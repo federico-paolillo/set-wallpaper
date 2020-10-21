@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetWallpaper.COM", "SetWallpaper.COM\SetWallpaper.COM.csproj", "{9344A876-6849-487F-BF11-C5DE8A394DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FP.SetWallpaper.COM", "FP.SetWallpaper.COM\FP.SetWallpaper.COM.csproj", "{9344A876-6849-487F-BF11-C5DE8A394DBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetWallpaper", "SetWallpaper\SetWallpaper.csproj", "{0470D948-A035-4C33-B9FF-AA364B986B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FP.SetWallpaper", "FP.SetWallpaper\FP.SetWallpaper.csproj", "{0470D948-A035-4C33-B9FF-AA364B986B87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{3C5C2330-62CF-4F53-AFD5-E11CA683213D}"
 	ProjectSection(SolutionItems) = preProject

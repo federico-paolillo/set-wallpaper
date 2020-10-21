@@ -1,10 +1,10 @@
-﻿using SetWallpaper.COM;
-using SetWallpaper.Output;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Management.Automation;
 using System.Runtime.InteropServices;
+using FP.SetWallpaper.Output;
+using SetWallpaper.COM;
 
-namespace SetWallpaper.Commands
+namespace FP.SetWallpaper.Commands
 {
     [Cmdlet(VerbsCommon.Get, "Monitor")]
     [OutputType(typeof(Monitor))]
@@ -21,13 +21,13 @@ namespace SetWallpaper.Commands
             {
                 WriteVerbose("Getting IDesktopWallpaper COM interface");
 
-                desktopWallpaper = (IDesktopWallpaper)new DesktopWallpaper();
+                desktopWallpaper = (IDesktopWallpaper) new DesktopWallpaper();
 
                 var monitors = new List<Monitor>();
 
                 WriteVerbose("Getting monitors count");
 
-                desktopWallpaper.GetMonitorDevicePathCount(out uint monitorsCount);
+                desktopWallpaper.GetMonitorDevicePathCount(out var monitorsCount);
 
                 WriteVerbose($"Found {monitorsCount} monitor(s)");
 
@@ -35,14 +35,14 @@ namespace SetWallpaper.Commands
                 {
                     WriteVerbose($"Getting monitor id for monitor {monitorIndex}");
 
-                    desktopWallpaper.GetMonitorDevicePathAt(monitorIndex, out string monitorID);
+                    desktopWallpaper.GetMonitorDevicePathAt(monitorIndex, out var monitorID);
 
                     var monitor = new Monitor(monitorIndex, monitorID);
 
                     monitors.Add(monitor);
                 }
 
-                WriteObject(monitors, enumerateCollection: true);
+                WriteObject(monitors, true);
             }
             catch (COMException comEx)
             {

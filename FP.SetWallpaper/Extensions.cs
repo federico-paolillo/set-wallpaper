@@ -4,13 +4,13 @@ using System.IO;
 using System.Management.Automation;
 using System.Runtime.InteropServices;
 
-namespace SetWallpaper
+namespace FP.SetWallpaper
 {
     public static class Extensions
     {
         //These are the extensions listed in the File Dialog shown when setting a wallpaper in Windows 10
 
-        public static readonly List<string> SUPPORTED_IMAGE_EXTENSIONS =
+        private static readonly List<string> SUPPORTED_IMAGE_EXTENSIONS =
             new List<string>
             {
                 ".jpg",
@@ -38,7 +38,9 @@ namespace SetWallpaper
         {
             if (comObject == null) return;
 
-            while (Marshal.ReleaseComObject(comObject) > 0) { };
+            while (Marshal.ReleaseComObject(comObject) > 0)
+            {
+            }
         }
 
         public static ErrorRecord ToErrorRecord(this COMException comEx, object targetObject = null)
@@ -46,13 +48,6 @@ namespace SetWallpaper
             if (comEx is null) throw new ArgumentNullException(nameof(comEx));
 
             return new ErrorRecord(comEx, "COMInteropFailure", ErrorCategory.InvalidOperation, targetObject);
-        }
-
-        public static ErrorRecord ToErrorRecord(this FileNotFoundException fnfEx, object targetObject = null)
-        {
-            if (fnfEx is null) throw new ArgumentNullException(nameof(fnfEx));
-
-            return new ErrorRecord(fnfEx, "WallpaperNotFound", ErrorCategory.InvalidArgument, targetObject);
         }
 
         public static bool HasPlausibleFileExtension(this string pathToWallpaper)

@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>SetWallpaper</AssemblyName>
-    <RootNamespace>SetWallpaper</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,13 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SetWallpaper.COM\SetWallpaper.COM.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="SetWallpaper.psd1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FP.SetWallpaper.COM\FP.SetWallpaper.COM.csproj" />
   </ItemGroup>
 
 </Project>
