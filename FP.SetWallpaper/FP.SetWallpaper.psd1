@@ -9,10 +9,10 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'SetWallpaper.dll'
+RootModule = 'FP.SetWallpaper.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.2'
+ModuleVersion = '1.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Core')
@@ -36,7 +36,7 @@ PowerShellVersion = '7.0.0'
 ProcessorArchitecture = 'Amd64'
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = @("SetWallpaper.COM.dll")
+RequiredAssemblies = @("FP.SetWallpaper.COM.dll")
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @()
@@ -63,6 +63,8 @@ PrivateData = @{
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         RequireLicenseAcceptance = $true
+        
+        Prerelease = 'alpha1'
 
     } # End of PSData hashtable
 
