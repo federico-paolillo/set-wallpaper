@@ -15,7 +15,7 @@ RootModule = 'FP.SetWallpaper.dll'
 ModuleVersion = '1.0.0'
 
 # Supported PSEditions
-CompatiblePSEditions = @('Core')
+CompatiblePSEditions = @('Core', 'Desktop')
 
 # ID used to uniquely identify this module
 GUID = '8bb87501-8d54-4083-8fd5-3fce5ee2d1b5'
@@ -27,10 +27,10 @@ Author = 'federico-paolillo'
 Copyright = '(c) 2020 federico-paolillo. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'PowerShell 7 Cmdlets to change wallpapers on Windows 10 x64'
+Description = 'PowerShell Cmdlets for wallpaper manipulation on Windows 10 x64'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '7.0.0'
+PowerShellVersion = '5.1.0'
 
 # Processor architecture (None, X86, Amd64) required by this module
 ProcessorArchitecture = 'Amd64'
@@ -53,7 +53,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('Windows', 'PSEdition_Core')
+        Tags = @('Windows', 'PSEdition_Core', 'PSEdition_Desktop')
 
         # A URL to the license for this module.
         LicenseUri = 'https://github.com/federico-paolillo/set-wallpaper/blob/master/LICENSE'
@@ -64,7 +64,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         RequireLicenseAcceptance = $true
         
-        Prerelease = 'alpha1'
+        Prerelease = 'alpha2'
 
     } # End of PSData hashtable
 

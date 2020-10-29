@@ -4,7 +4,7 @@ using System.Linq;
 using System.Management.Automation;
 using System.Runtime.InteropServices;
 using FP.SetWallpaper.Output;
-using SetWallpaper.COM;
+using FP.SetWallpaper.COM;
 
 namespace FP.SetWallpaper.Commands
 {
