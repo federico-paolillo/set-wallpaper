@@ -1,7 +1,31 @@
 # Set-Wallpaper
 
-PowerShell Cmdlets to change wallpapers on Windows 10 x64.  
-Any PowerShell version starting from 5.1 is supported, runs reliably only on Windows 10 x64.  
+PowerShell cmdlets for wallpaper manipulation on Windows.
+
+**Note:** The package is still in pre-release
+
+## Requirements
+
+Supports PowerShell 5.1+ and PowerShell Core. Works reliably on Windows 10.  
+Might support older versions of Windows as long as at PowerShell 5.1+ or PowerShell Core is available.  
+
+**Note:** It is possible that your administrator has blocked changing your desktop background, if that is the case `Set-Wallpaper` might fail.  
+
+## Installation
+
+### PowerShell Gallery
+
+`Install-Module FP.SetWallpaper -AllowPrerelease`
+
+Installing packages from the Gallery requires the latest version of the PowerShellGet module.  
+[See Installing PowerShellGet on Microsoft documentation](https://docs.microsoft.com/en-us/powershell/scripting/gallery/installing-psget?view=powershell-7)  
+
+By default, `Install-Module` installs modules to `$env:ProgramFiles\WindowsPowerShell\Modules`, this operation requires an administrator account.  
+Specify `-Scope CurrentUser` to install the module in `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` if you don't have an administrator account.  
+
+### Manually
+
+[Refer to Microsoft documentation](https://docs.microsoft.com/en-us/powershell/scripting/developer/module/installing-a-powershell-module)
 
 ## Cmdlets
 
