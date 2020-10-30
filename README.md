@@ -70,7 +70,7 @@ The number of objects returned depends on the number of monitors queried.
 
 ### Set-Wallpaper
 
-Set a file path as wallpaper of the monitors specified.  
+Set a file identified by its path as wallpaper of the monitors specified.  
 
 #### Parameters
 
