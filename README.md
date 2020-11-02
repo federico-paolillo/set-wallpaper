@@ -2,8 +2,6 @@
 
 PowerShell cmdlets for wallpaper manipulation on Windows.
 
-**Note:** The package is still in pre-release
-
 ## Requirements
 
 Supports PowerShell 5.1+ and PowerShell Core. Works reliably on Windows 10.  
